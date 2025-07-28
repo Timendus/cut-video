@@ -70,8 +70,18 @@ def main():
         sys.exit(1)
 
     input_file = sys.argv[1]
-    cuts = parse_cuts_file(sys.argv[2])
+    cuts_file = sys.argv[2]
     overwrite = len(sys.argv) > 3 and sys.argv[3].lower() == "--overwrite"
+
+    if not os.path.exists(input_file) or not os.path.isfile(input_file):
+        print(f"Error: Input file '{input_file}' not found.")
+        sys.exit(1)
+
+    if not os.path.exists(cuts_file) or not os.path.isfile(cuts_file):
+        print(f"Error: Cuts file '{cuts_file}' not found.")
+        sys.exit(1)
+
+    cuts = parse_cuts_file(sys.argv[2])
 
     target_directory = os.path.splitext(input_file)[0]
     if not os.path.exists(target_directory):
