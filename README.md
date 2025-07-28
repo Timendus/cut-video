@@ -24,6 +24,18 @@ Or if you prefer pipx:
 pipx install git+https://github.com/timendus/cut-video
 ```
 
+## Uninstalling
+
+```bash
+pip uninstall cut-video
+```
+
+Or:
+
+```bash
+pipx uninstall cut-video
+```
+
 ## Usage
 
 Create a text file defining the cuts you want to make. The file should contain
