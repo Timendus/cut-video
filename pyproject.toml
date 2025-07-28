@@ -1,0 +1,7 @@
+[project]
+name = "cut-video"
+version = "0.1.0"
+dependencies = ["ffmpeg-python>=0.2.0"]
+
+[project.scripts]
+cut-video = "cut_video.cli:main"
